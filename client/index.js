@@ -6,9 +6,9 @@ angular.module('blog', ['firebase', 'ui.router'])
   $urlRouterProvider.otherwise('/');
 
 	$stateProvider
-	.state('home',{url: '/', templateUrl: '/views/home/home.html'})
+	.state('home',{url: '/', templateUrl: '/views/home/home.html', controller: 'BlogCtrl'})
   .state('login', {url: '/login', templateUrl: '/views/users/users.html', controller: 'UsersCtrl'})
-  .state('blogPage', {url: '/blog', templateUrl: '/views/blog/blog.html', controller: 'BlogCtrl'});
+  .state('blogPage', {url: '/blog', templateUrl: '/views/blog/blogs.html', controller: 'BlogCtrl'});
 }])
 
 .run(['$rootScope','$window', '$firebaseAuth', 'firebaseUrl', function($rootScope, $window, $firebaseAuth, firebaseUrl) {

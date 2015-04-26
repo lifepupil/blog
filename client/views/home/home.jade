@@ -1,1 +1,7 @@
-h1 HOME
+h1 ARCHIVE
+
+.row
+	.col-xs-12
+		#archive(ng-repeat='post in afPosts')
+			p#postTitle {{post.title}}
+			p {{post.entry}}

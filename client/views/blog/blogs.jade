@@ -1,0 +1,37 @@
+h1 BLOG
+
+.row
+  .col-xs-11
+    form(name='blogPage', novalidate)
+      .form-group
+        label(for='post') Title
+        input.form-control#title(type='text', name='post', ng-model='post.title')
+.row
+  .col-xs-11
+      .form-group
+        label(for='entry') Entry
+        textarea.form-control(type='text', name='entry', ng-model='post.entry', rows='10')
+      .form-group
+        button.btn.btn-success(type='submit', ng-click='addPost(post)') Post
+      //-   // IF THERE IS AN $id (WHICH IS THE CASE WHEN THE TASK IS IN THE DATABASE) THEN $id WILL BE TRUE
+      //-   button.btn.btn-success(type='submit', ng-show='task.$id', ng-click='updateTask(task)') Update
+
+//- table.table.table-striped
+//-   thead
+//-     tr
+//-       th Edit
+//-       th Delete
+//-       th(ng-click='sort("title")') Title
+//-       th(ng-click='sort("due")') Due Date
+//-       th(ng-click='sort("priority")') Priority
+//-       th(ng-click='sort("isComplete")') Complete?
+//-       th(ng-click='sort("createdAt")') Created At
+//-   tbody
+//-     tr(ng-repeat='t in afTasks | orderBy: taskOrder', ng-class='{completed:t.isComplete}')
+//-       td: button.btn.btn-info.btn.xs(ng-click='editTask(t)') Edit
+//-       td: button.btn.btn-danger.btn.xs(ng-click='deleteTask(t)') Delete
+//-       td {{t.title}}
+//-       td {{t.due | date: 'yyyy-MM-dd'}}
+//-       td {{t.priority}}
+//-       td: input(type='checkbox', ng-model= 't.isComplete', ng-click='toggleComplete(t)')
+//-       td {{t.createdAt | date: 'yyyy-MM-dd'}}

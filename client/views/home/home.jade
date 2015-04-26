@@ -3,5 +3,6 @@ h1 ARCHIVE
 .row
 	.col-xs-12
 		#archive(ng-repeat='post in afPosts')
-			p#postTitle {{post.title}}
+			p#postTitle {{post.title}} 
+			p {{post.postedOn | date: 'yyyy-MM-dd'}}
 			p {{post.entry}}

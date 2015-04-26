@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('blog')
-.factory('Post', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray) {
+.factory('Post', ['$rootScope', '$firebaseArray', '$window', function($rootScope, $firebaseArray, $window) {
 	// this is the module that interacts with firebase to manipulate blog posts
   var fbPosts;
   var afPosts;
@@ -14,7 +14,12 @@ angular.module('blog')
   }
 
   function add(post) {
-    return afPosts.$add(post);
+		var o = {
+			title: post.title,
+			entry: post.entry,
+			postedOn: $window.Firebase.ServerValue.TIMESTAMP
+		};
+    return afPosts.$add(o);
   }
 
 	return {init: init, add: add};

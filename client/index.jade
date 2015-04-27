@@ -10,17 +10,17 @@ html(lang='en', ng-app='blog')
     link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
     link(rel='shortcut icon', href='/favicon.ico')
   body
+    include views/nav/nav
     .container-fluid
       .row
         .col-xs-12
-          h1 Lifepupil Blog
           div(ui-view)
 
     script(src='/vendor/jquery/dist/jquery.min.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.min.js')
-    script(src='/vendor/angular-ui-router/release/angular-ui-router.min.js')
     script(src='/vendor/lodash/lodash.min.js')
     script(src='/vendor/firebase/firebase.js')
     script(src='/vendor/angular/angular.min.js')
     script(src='/vendor/angularfire/dist/angularfire.min.js')
+    script(src='/vendor/angular-ui-router/release/angular-ui-router.min.js')
     script(src=isProd ? '/index.min.js' : '/index.js')

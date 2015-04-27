@@ -13,6 +13,10 @@ angular.module('blog')
     return afPosts;
   }
 
+	// function getTitle(post) {
+	// 	return post.title;
+	// });
+
   function add(post) {
 		var o = {
 			title: post.title,
